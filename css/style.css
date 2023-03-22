@@ -28,6 +28,14 @@ body {
 }
 
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   text-align: center;
   padding: 20px;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(14%, rgb(127, 0, 0)), color-stop(50%, rgba(207, 0, 0, 0.86)), color-stop(91%, rgba(127, 0, 0, 0.99)));
