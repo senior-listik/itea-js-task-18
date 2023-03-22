@@ -24,21 +24,25 @@ body{
     justify-content: space-around;
     text-align: center;
     padding: 20px;
-    background: linear-gradient(0deg, rgba(127, 0, 0, 1) 14%, rgba(207, 0, 0, 0.86) 50%, rgba(127, 0, 0, 0.99) 91%);
+    background: linear-gradient(0deg, rgba(46, 46, 46, 1) 0%, rgba(143, 100, 28, 1) 50%, rgba(46, 46, 46, 1) 100%);
+// background: linear-gradient(0deg, rgba(36, 36, 36, 1) 0%, rgba(100, 76, 36, 1) 52%, rgba(36, 36, 36, 1) 100%);
+    // background: linear-gradient(0deg, rgba(127, 0, 0, 1) 14%, rgba(207, 0, 0, 0.86) 50%, rgba(127, 0, 0, 0.99) 91%);
     &__inp {
-        // height: 25px;
-        padding: 5px 10px;
+        width: 300px;
+        padding: 10px 15px;
         @extend %border_radius;
         border: 1px solid grey;
-       outline: none;
+        outline: none;
+        
     }
 
     &__btn {
-        padding: 5px 10px;
+        padding: 10px 15px;
         @extend %border_radius;
-        border: 1px solid grey;
+        // border: 1px solid grey;
         cursor: pointer;
-        background: linear-gradient(90deg, rgba(0, 255, 235, 1) 0%, rgba(7, 58, 187, 1) 100%);
+        background: rgb(128, 3, 3);
+        // background:linear-gradient(272deg, rgba(107, 27, 27, 1) 0%, rgba(255, 159, 0, 1) 48%, rgba(100, 30, 30, 1) 100%);
         color: white;
     }
 }

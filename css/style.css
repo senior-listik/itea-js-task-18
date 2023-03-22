@@ -38,22 +38,20 @@ body {
       justify-content: space-around;
   text-align: center;
   padding: 20px;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(14%, rgb(127, 0, 0)), color-stop(50%, rgba(207, 0, 0, 0.86)), color-stop(91%, rgba(127, 0, 0, 0.99)));
-  background: -o-linear-gradient(bottom, rgb(127, 0, 0) 14%, rgba(207, 0, 0, 0.86) 50%, rgba(127, 0, 0, 0.99) 91%);
-  background: linear-gradient(0deg, rgb(127, 0, 0) 14%, rgba(207, 0, 0, 0.86) 50%, rgba(127, 0, 0, 0.99) 91%);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(46, 46, 46)), color-stop(50%, rgb(143, 100, 28)), to(rgb(46, 46, 46)));
+  background: -o-linear-gradient(bottom, rgb(46, 46, 46) 0%, rgb(143, 100, 28) 50%, rgb(46, 46, 46) 100%);
+  background: linear-gradient(0deg, rgb(46, 46, 46) 0%, rgb(143, 100, 28) 50%, rgb(46, 46, 46) 100%);
 }
 .header__inp {
-  padding: 5px 10px;
+  width: 300px;
+  padding: 10px 15px;
   border: 1px solid grey;
   outline: none;
 }
 .header__btn {
-  padding: 5px 10px;
-  border: 1px solid grey;
+  padding: 10px 15px;
   cursor: pointer;
-  background: -webkit-gradient(linear, left top, right top, from(rgb(0, 255, 235)), to(rgb(7, 58, 187)));
-  background: -o-linear-gradient(left, rgb(0, 255, 235) 0%, rgb(7, 58, 187) 100%);
-  background: linear-gradient(90deg, rgb(0, 255, 235) 0%, rgb(7, 58, 187) 100%);
+  background: rgb(128, 3, 3);
   color: white;
 }
 
