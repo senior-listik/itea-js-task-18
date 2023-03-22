@@ -1,0 +1,73 @@
+*, * {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  background: rgb(71, 1, 1);
+}
+.trello {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  background: url(../img/BG.jpg) 50%/cover no-repeat;
+  padding: 20px;
+}
+.trello__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.trello__item > div {
+  color: white;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20%;
+          flex: 1 1 20%;
+  background: rgba(64, 64, 64, 0.685);
+  overflow: hidden;
+  border-radius: 5px;
+  min-width: 200px;
+  min-height: 150px;
+}
+.trello__taskTitle {
+  padding: 10px;
+  text-align: center;
+  background: rgb(128, 3, 3);
+  font-size: 1.25rem;
+}
+.trello__body {
+  padding: 10px 10px 20px;
+  height: 100%;
+}
+.trello__task {
+  color: rgb(71, 1, 1);
+  padding: 5px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  background: rgb(233, 233, 233);
+  border-radius: 5px;
+}

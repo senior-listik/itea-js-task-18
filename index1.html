@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.wrapper{
+			position: relative;
+			display: flex;
+			align-items: center;
+			background: rgb(128, 126, 126);
+		}
+		.leftPoligon, .rightPoligon{
+			height: 100vh;
+			border: 3px solid rgb(255, 255, 255) ;
+			width: 43%;
+			position: relative;
+			background: rgb(2, 96, 2);
+		}
+		.leftGate, .rightGate{
+			height: 300px;
+			width: 7%;
+			border: 1px solid black;
+			position: relative;
+			border: 3px solid rgb(255, 255, 255) ;
+			background: rgb(187, 187, 187);
+
+		}
+		img{
+			height: 50px;
+			cursor: pointer;
+			position: absolute;
+			z-index: 2;
+		}
+		.total{
+			position: absolute;
+			right: 10px;
+			top: 20px;
+			background: #000;
+			color: white;
+			min-width: 50px;
+			height: 20px;
+			text-align: center;
+
+		}
+		.circle{
+			position: absolute;
+			width: 300px;
+			height: 300px;
+			border: 3px solid rgb(255, 255, 255) ;
+			z-index: 1;
+			border-radius: 50%;
+			left: calc(50% - 150px);
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="circle"></div>
+		<div class="leftGate"></div>
+		<div class="leftPoligon">
+			<img class =  "ball" src="./img/soccer-ball-png-26391.png" alt="" draggable = "true"></div>
+		<div class="rightPoligon"></div>
+		<div class="rightGate"></div>
+	</div>
+	<div class="total">
+		<span class="firstTeam"></span>/<span class="secondTeam"></span>
+	</div>
+	<script>
+
+		const poligons = document.querySelectorAll('.wrapper>div');
+		const ball = document.querySelector('.ball')
+		let firstTeam =document.querySelector('.firstTeam');
+		let secondTeam =  document.querySelector('.secondTeam');
+
+		let firstTeamScore = 0;
+		let secondTeamScore = 0;
+		
+		poligons.forEach( function(el){
+
+			el.addEventListener('dragover',allowDrop);
+			el.addEventListener('drop', dropElement);
+		});
+
+
+		function allowDrop(e){
+			e.preventDefault()
+		} 
+
+		function dropElement(e){
+			console.log(e);
+			console.log('pageX - ' + e.pageX);
+			console.log('pageY - ' + e.pageY);
+			console.log('offsetX - ' + e.offsetX);
+			console.log('offsetY - ' + e.offsetY);
+
+			if (this.classList.contains('leftGate')) {
+				firstTeam.innerText = ++firstTeamScore;
+			}
+			else if (this.classList.contains('rightGate')) {
+				secondTeam.innerText = ++secondTeamScore;
+			}
+	
+			this.appendChild(ball);
+			ball.style.left = (e.pageX - (e.pageX - e.offsetX) - 25) + 'px';
+			ball.style.top = (e.pageY - (e.pageY - e.offsetY) - 25) + 'px';
+				// ball.style.left = e.pageX + 'px';
+				// ball.style.top = e.pageY + 'px';
+				// ball.style.left = e.offsetX + 'px';
+				// ball.style.top = e.offsetY + 'px';
+		}
+
+		firstTeam.innerText = firstTeamScore;
+		secondTeam.innerText = secondTeamScore;
+
+
+	</script>
+</body>
+</html>
