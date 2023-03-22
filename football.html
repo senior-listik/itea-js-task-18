@@ -19,13 +19,13 @@
 		.leftPoligon, .rightPoligon{
 			height: 100vh;
 			border: 3px solid rgb(255, 255, 255) ;
-			width: 45%;
+			width: 43%;
 			position: relative;
 			background: rgb(2, 96, 2);
 		}
 		.leftGate, .rightGate{
 			height: 300px;
-			width: 5%;
+			width: 7%;
 			border: 1px solid black;
 			position: relative;
 			border: 3px solid rgb(255, 255, 255) ;
@@ -36,7 +36,7 @@
 			height: 50px;
 			cursor: pointer;
 			position: absolute;
-			z-index: 1;
+			z-index: 2;
 		}
 		.total{
 			position: absolute;
@@ -49,10 +49,20 @@
 			text-align: center;
 
 		}
+		.circle{
+			position: absolute;
+			width: 300px;
+			height: 300px;
+			border: 3px solid rgb(255, 255, 255) ;
+			z-index: 1;
+			border-radius: 50%;
+			left: calc(50% - 150px);
+		}
 	</style>
 </head>
 <body>
 	<div class="wrapper">
+		<div class="circle"></div>
 		<div class="leftGate"></div>
 		<div class="leftPoligon">
 			<img class =  "ball" src="./img/soccer-ball-png-26391.png" alt="" draggable = "true"></div>
@@ -71,8 +81,7 @@
 
 		let firstTeamScore = 0;
 		let secondTeamScore = 0;
-
-
+		
 		poligons.forEach( function(el){
 
 			el.addEventListener('dragover',allowDrop);
@@ -86,10 +95,10 @@
 
 		function dropElement(e){
 			console.log(e);
-			console.log(e.pageX);
-			console.log(e.pageY);
-			console.log(e.offsetX);
-			console.log(e.offsetY);
+			console.log('pageX - ' + e.pageX);
+			console.log('pageY - ' + e.pageY);
+			console.log('offsetX - ' + e.offsetX);
+			console.log('offsetY - ' + e.offsetY);
 
 			if (this.classList.contains('leftGate')) {
 				firstTeam.innerText = ++firstTeamScore;
@@ -97,9 +106,10 @@
 			else if (this.classList.contains('rightGate')) {
 				secondTeam.innerText = ++secondTeamScore;
 			}
+	
 			this.appendChild(ball);
-			ball.style.left = (e.pageX - (e.pageX - e.offsetX)) + 'px';
-			ball.style.top = (e.pageY - (e.pageY - e.offsetY)) + 'px';
+			ball.style.left = (e.pageX - (e.pageX - e.offsetX) - 25) + 'px';
+			ball.style.top = (e.pageY - (e.pageY - e.offsetY) - 25) + 'px';
 				// ball.style.left = e.pageX + 'px';
 				// ball.style.top = e.pageY + 'px';
 				// ball.style.left = e.offsetX + 'px';
