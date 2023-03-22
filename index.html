@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./libs/fontawesome/css/all.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>TASK_18</title>
 </head>
 <body>
     <div class="wrapper">
         <header class="header">
-            <input type="text" class="header__inp">
+            <input type="text" class="header__inp" placeholder="Enter new task">
             <button class="header__btn">Add Task</button>
         </header>
         <div class="trello">
@@ -18,10 +19,12 @@
                 <div class="trello__sprint">
                     <div id="sprint" class="trello__taskTitle">Sprint</div>
                     <div class="trello__body">
-                        <div class="trello__task" draggable="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem debitis illo facere
-                        nisi corrupti est dignissimos quos
-                        beatae minima eum quia, possimus similique delectus, animi veniam magni amet nihil tempora</div>
-               
+                        <div class="trello__task" draggable="true" contenteditable="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem debitis illo facere
+                            nisi corrupti est dignissimos quos
+                            beatae minima eum quia, possimus similique delectus, animi veniam magni amet nihil tempora
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+            
                     </div>
                     </div>
                 <div class="trello__progress">
