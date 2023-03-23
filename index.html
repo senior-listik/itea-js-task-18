@@ -11,9 +11,25 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <a href="./soccer.html"><img src="./img/soccer-ball-png-26391.png" width='30px' alt=""></a>
-            <input type="text" class="header__inp" placeholder="Enter new task">
-            <button class="header__btn">Add Task</button>
+            <div class="header__link">
+                <a href="./soccer.html"><img src="./img/soccer-ball-png-26391.png" width='30px' alt=""></a>
+            </div>
+            <div class="header__addTask">
+                <input type="text" class="header__inp" placeholder="Enter new task">
+                <button class="header__btn">Add New Task</button>
+            </div>
+            <div class="header__addPerformer">
+                <button class="header__addPerformerBtn">Add Performer</button>
+                <div class="header__performerContainer performersVisible">
+                    <img src="./img/1.jpg" alt="avatar" draggable="true">
+                    <img src="./img/2.jpg" alt="avatar" draggable="true">
+                    <img src="./img/28.jpg" alt="avatar" draggable="true">
+                    <img src="./img/49.jpg" alt="avatar" draggable="true">
+                    <img src="./img/6.jpg" alt="avatar" draggable="true">
+                    <img src="./img/61.jpg" alt="avatar" draggable="true">
+                    <img src="./img/62.jpg" alt="avatar" draggable="true">
+                </div>
+            </div>
         </header>
         <div class="trello">
             <div class="trello__item">
@@ -27,7 +43,7 @@
                         </div>
             
                     </div>
-                    </div>
+                </div>
                 <div class="trello__progress">
                     <div id="progress" class="trello__taskTitle">In progress</div>
                     <div class="trello__body"></div>
