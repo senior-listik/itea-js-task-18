@@ -96,6 +96,21 @@ body{
     flex: 1 1 auto;
     background: url(../img/BG.jpg) 50%/cover no-repeat;
     padding: 20px;
+    &__addTask{
+        padding: 10px;
+        margin-bottom: 10px;
+        background: rgb(1, 173, 18);
+        @extend %border_radius;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+        position: relative;
+        cursor: pointer;
+        i{
+            position: absolute;
+            left: 20px;
+        }
+    }
     &__item {
         display: flex;
         gap: 20px;
