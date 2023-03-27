@@ -1,3 +1,4 @@
+// creating variables
 const poligons = document.querySelectorAll('.trello__item .trello__body');
 let trelloRemoveTaskBtn = document.querySelector('.fa-circle-xmark');
 const trelloBtn = document.querySelector('.header__btn');
@@ -5,6 +6,7 @@ const trelloInp = document.querySelector('.header__inp');
 const trelloSprint = document.querySelector('.trello__sprint .trello__body');
 let trelloTask = document.querySelector('.trello__task');
 let newTrelloTask;
+
 
 trelloTask.addEventListener('dragstart', movingTask);
 trelloTask.addEventListener('drop', (event)=>{event.stopPropagation()})
@@ -19,7 +21,15 @@ trelloRemoveTaskBtn.addEventListener('click', removeTask);
 trelloBtn.addEventListener('click', addTask);
 
 function removeTask() {
-    this.parentElement.remove();
+
+    // returning the avatar to the container when deleting a task
+    let img = this.parentElement.querySelector('img');
+    if ( img !== null){
+        performerContainer.appendChild(img);
+        this.parentElement.remove();
+    } else {
+        this.parentElement.remove();
+    }
 }
 
 function allowDrop(e) {
@@ -67,6 +77,8 @@ const performerContainer = document.querySelector('.header__performerContainer')
 let performers = document.querySelectorAll('.header__performerContainer img');
 let performer;
 
+performerContainer.addEventListener('dragover', allowDrop);
+
 showPerformerBtn.addEventListener('click', performersVisible);
 
 function performersVisible() {
@@ -75,6 +87,7 @@ function performersVisible() {
   
 // adding performers
 performerContainer.addEventListener('dragover', allowDrop);
+performerContainer.addEventListener('drop', dropPerformer);
 trelloTask.addEventListener('dragover', allowDrop);
 
 performers.forEach((el) => {
@@ -82,8 +95,10 @@ performers.forEach((el) => {
 });
 
 function dropPerformer() {
-    this.appendChild(performer);
-    
+
+    if (this != '<img>') {
+        this.appendChild(performer);
+    }  
 }   
 
 // add new performer avatar to container
@@ -100,6 +115,6 @@ function addNewAvatar() {
     performerContainer.appendChild(nwePerformer);
     performers = document.querySelectorAll('.header__performerContainer img');
     performers.forEach((el) => {
-    el.addEventListener('dragstart', (e) => { performer = e.target });
-});
+        el.addEventListener('dragstart', (e) => { performer = e.target });
+    });
 }
