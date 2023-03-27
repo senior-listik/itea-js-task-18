@@ -51,7 +51,7 @@ body{
     }
     &__performerContainer{
         height: 40px;
-        width: 200px;
+        width: 250px;
         background: #FFFFFF;
         @extend %border_radius;
         padding: 5px;
@@ -61,20 +61,29 @@ body{
         overflow-x:scroll ;
         transition: 1s;
         &::-webkit-scrollbar {
-            height: 0;
+            height: 3px;
         }
         img{
             width: 30px;
             @extend %border_radius;
         }
     }
-    &__addPerformerBtn{
+    &__showPerformerBtn{
         @extend %border_radius;
         padding: 5px 10px;
         border: 1px solid grey;
             cursor: pointer;
             background: linear-gradient(90deg, rgba(0, 255, 235, 1) 0%, rgba(7, 58, 187, 1) 100%);
             color: white
+    }
+    &__addPerformerBtn {
+        @extend %border_radius;
+        padding: 0px 10px;
+        border: 1px solid grey;
+        cursor: pointer;
+        background: linear-gradient(90deg, rgba(0, 255, 235, 1) 0%, rgba(7, 58, 187, 1) 100%);
+        color: white;
+        font-weight: 700;
     }
 }
 .performersVisible{

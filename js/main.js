@@ -62,12 +62,12 @@ function movingTask(e) {
 
 
 // the appearance of a container with executors when a button is pressed
-const addPerformerBtn = document.querySelector('.header__addPerformerBtn');
+const showPerformerBtn = document.querySelector('.header__showPerformerBtn');
 const performerContainer = document.querySelector('.header__performerContainer');
-const performers = document.querySelectorAll('.header__performerContainer img');
+let performers = document.querySelectorAll('.header__performerContainer img');
 let performer;
 
-addPerformerBtn.addEventListener('click', performersVisible);
+showPerformerBtn.addEventListener('click', performersVisible);
 
 function performersVisible() {
     performerContainer.classList.toggle('performersVisible')
@@ -85,3 +85,21 @@ function dropPerformer() {
     this.appendChild(performer);
     
 }   
+
+// add new performer avatar to container
+const addNewPerformerBtn = document.querySelector('.header__addPerformerBtn');
+let nwePerformer;
+addNewPerformerBtn.addEventListener('click', addNewAvatar);
+
+function addNewAvatar() {
+
+    nwePerformer = document.createElement('img');
+    nwePerformer.setAttribute('src', './img/Unknown.jpg');
+    nwePerformer.setAttribute('alt', 'avatar');
+    nwePerformer.setAttribute('draggable', 'true');
+    performerContainer.appendChild(nwePerformer);
+    performers = document.querySelectorAll('.header__performerContainer img');
+    performers.forEach((el) => {
+    el.addEventListener('dragstart', (e) => { performer = e.target });
+});
+}
