@@ -9,7 +9,7 @@ let newTrelloTask;
 
 
 trelloTask.addEventListener('dragstart', movingTask);
-trelloTask.addEventListener('drop', (event)=>{event.stopPropagation()})
+trelloTask.addEventListener('drop', (event)=>{event.stopPropagation()}) // avoiding the bubbling effect
 trelloTask.addEventListener('drop', dropPerformer);
 
 poligons.forEach((el) => {
@@ -18,6 +18,7 @@ poligons.forEach((el) => {
 })
 
 trelloRemoveTaskBtn.addEventListener('click', removeTask);
+
 trelloBtn.addEventListener('click', addTask);
 
 function removeTask() {
@@ -33,7 +34,7 @@ function removeTask() {
 }
 
 function allowDrop(e) {
-    e.preventDefault();
+    e.preventDefault(); // overrides the browser's default behavior
 }
 
 function dropTask() {
@@ -43,10 +44,14 @@ function dropTask() {
 function addTask() {
     if (trelloInp.value) {
         const trelloTask = document.createElement('div');
+
+        // add a remove task button and hang an event on click
         const trelloRemoveTaskBtn = document.createElement('i');
         trelloRemoveTaskBtn.classList.add('fa-solid');
         trelloRemoveTaskBtn.classList.add('fa-circle-xmark');
         trelloRemoveTaskBtn.addEventListener('click', removeTask);
+
+        // create a new task on button click
         trelloTask.addEventListener('dragstart', (e) => { newTrelloTask = e.target });
         trelloTask.classList.add('trello__task');
         trelloTask.innerText = trelloInp.value;
@@ -54,8 +59,9 @@ function addTask() {
         trelloTask.setAttribute('draggable', 'true');
         trelloSprint.appendChild(trelloTask);
 
-        trelloTask.addEventListener('drop', (event)=>{event.stopPropagation()})
-        trelloTask.addEventListener('drop', dropPerformer);
+        trelloTask.addEventListener('drop', (event) => { event.stopPropagation() });
+        
+        trelloTask.addEventListener('drop', dropPerformer); // add an event for adding a task performer
 
         trelloTask.appendChild(trelloRemoveTaskBtn);
         trelloInp.value = '';
@@ -65,8 +71,8 @@ function addTask() {
 
 function movingTask(e) {
     newTrelloTask = e.target;
-    newTrelloTask.addEventListener('drop', (event) => { event.stopPropagation() })
-    newTrelloTask.addEventListener('drop', dropPerformer);
+    newTrelloTask.addEventListener('drop', (event) => { event.stopPropagation() });
+    newTrelloTask.addEventListener('drop', dropPerformer); // add an event for adding a new task performer
 
 };
 
@@ -95,7 +101,7 @@ performers.forEach((el) => {
 });
 
 function dropPerformer() {
-
+// exclusion of nesting avatars into each other
     if (this != '<img>') {
         this.appendChild(performer);
     }  
