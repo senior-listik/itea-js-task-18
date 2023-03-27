@@ -9,7 +9,7 @@ img {
   width: 30px;
 }
 
-.trello__task img, .trello__task, .trello__item > div, .trello__addTask, .header__addPerformerBtn, .header__showPerformerBtn, .header__performerContainer img, .header__performerContainer, .header__btn, .header__inp {
+.trello__task img, .trello__task, .trello__item > div, .trello__addTaskBtn, .header__addPerformerBtn, .header__showPerformerBtn, .header__performerContainer img, .header__performerContainer, .header__btn, .header__inp {
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -127,7 +127,7 @@ body {
   background: url(../img/BG.jpg) 50%/cover no-repeat;
   padding: 20px;
 }
-.trello__addTask {
+.trello__addTaskBtn {
   padding: 10px;
   margin-bottom: 10px;
   background: rgb(1, 173, 18);
@@ -137,7 +137,7 @@ body {
   position: relative;
   cursor: pointer;
 }
-.trello__addTask i {
+.trello__addTaskBtn i {
   position: absolute;
   left: 20px;
 }
@@ -171,7 +171,7 @@ body {
 }
 .trello__task {
   color: rgb(71, 1, 1);
-  padding: 35px 10px 10px;
+  padding: 10px 10px;
   font-size: 0.8rem;
   margin-bottom: 10px;
   background: rgb(233, 233, 233);
@@ -181,6 +181,33 @@ body {
   position: absolute;
   top: 3px;
   left: 3px;
+}
+.trello__avatarBlock {
+  min-height: 30px;
+}
+.trello__taskTextBlock {
+  min-height: 20px;
+}
+.trello__editBtn {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  color: white;
+  background: rgb(3, 116, 208);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 10px;
+  cursor: pointer;
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
 }
 .fa-circle-xmark {
   color: rgb(255, 150, 4);
