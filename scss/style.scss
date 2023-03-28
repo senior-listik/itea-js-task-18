@@ -23,9 +23,7 @@ body{
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 30px;
-    text-align: center;
+    gap: 40px;
     padding: 10px 20px;
     background: linear-gradient(0deg, rgba(127, 0, 0, 1) 14%, rgba(207, 0, 0, 0.86) 50%, rgba(127, 0, 0, 0.99) 91%);
     &__inp {
@@ -46,7 +44,6 @@ body{
     &__addPerformer{
         display: flex;
         width: 30%;
-        // justify-content: space-between;
         gap: 10px;
     }
     &__performerContainer{
@@ -131,9 +128,7 @@ body{
         background: rgb(128, 3, 3);
         font-size: 1.25rem;
     }
-    &__sprint {
-       
-    }
+
     &__body{
         padding: 10px 10px 20px;
         height: 100%;
@@ -147,15 +142,15 @@ body{
         @extend %border_radius;
         position: relative;
         img{
-            position: absolute;
-            top: 3px;
-            left: 3px;
             @extend %border_radius;
+            margin-bottom: 10px;
         }
     }
     &__avatarBlock{
         min-height: 30px;
-        
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
     }
     &__taskTextBlock{
         min-height: 20px;
