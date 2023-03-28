@@ -120,6 +120,7 @@ function addNewAvatar() {
     nwePerformer.setAttribute('src', './img/Unknown.jpg');
     nwePerformer.setAttribute('alt', 'avatar');
     nwePerformer.setAttribute('draggable', 'true');
+    nwePerformer.setAttribute('width', '40px');
     performerContainer.appendChild(nwePerformer);
     performers = document.querySelectorAll('.header__performerContainer img');
     performers.forEach((el) => {
