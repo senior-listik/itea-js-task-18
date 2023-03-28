@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgb(128, 126, 126);
+}
+
+.leftPoligon,
+.rightPoligon {
+    height: 100vh;
+    border: 3px solid rgb(255, 255, 255);
+    width: 43%;
+    position: relative;
+    background: rgb(2, 96, 2);
+}
+
+.leftGate,
+.rightGate {
+    height: 300px;
+    width: 7%;
+    border: 1px solid black;
+    position: relative;
+    border: 3px solid rgb(255, 255, 255);
+    background: rgb(187, 187, 187);
+
+}
+
+img {
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+}
+
+.total {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    background: #000;
+    color: white;
+    min-width: 50px;
+    height: 20px;
+    text-align: center;
+
+}
+
+.circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 3px solid rgb(255, 255, 255);
+    z-index: 1;
+    border-radius: 50%;
+    left: calc(50% - 150px);
+}
